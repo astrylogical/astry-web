@@ -1,0 +1,9 @@
+node_modules
+.astro
+build
+dist
+test-results
+tests
+*.md
+.env
+.git

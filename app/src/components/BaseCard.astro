@@ -1,0 +1,13 @@
+---
+type Props = astroHTML.JSX.HTMLAttributes;
+
+const { class: className, ...rest } = Astro.props;
+const classes = [
+	'card-pillow',
+	className
+].filter(Boolean).join(' ');
+---
+
+<section class={classes} {...rest}>
+	<slot />
+</section>

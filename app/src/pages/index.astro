@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BaseCard from '../components/BaseCard.astro';
+import chartIcon from '../assets/icons/chart-filled.svg?url';
+import affirmationIcon from '../assets/icons/flower-filled.svg?url';
+import tarotIcon from '../assets/icons/tarot-filled.svg?url';
+import sunFace from '../assets/misc/suns/sun-face.svg?url';
+---
+
+<Layout
+	title="Astry · Astrology for your everyday"
+	description="Meet Astry, a chart-aware space for astrology, tarot, affirmations, and daily reflection."
+>
+	<main class="splash-page">
+		<div class="splash-glow" aria-hidden="true"></div>
+
+		<header class="splash-hero">
+			<div class="splash-copy">
+				<p class="eyebrow">Astrology for your everyday</p>
+				<h1>astry</h1>
+				<p class="lede">Your natal chart, daily sky, tarot readings, and affirmations in one quiet place.</p>
+			</div>
+			<img src={sunFace} alt="" class="splash-sun" loading="eager" aria-hidden="true" />
+		</header>
+
+		<BaseCard class="launch-card">
+			<div>
+				<p class="launch-kicker">The full experience has moved</p>
+				<h2>Follow your sky at astry.app.</h2>
+				<p>Explore your chart, draw tarot with astrological context, and keep the guidance that lands.</p>
+			</div>
+			<a href="https://astry.app" class="btn-pink launch-button">Open Astry</a>
+		</BaseCard>
+
+		<section class="feature-grid" aria-label="Astry features">
+			<BaseCard class="feature-card">
+				<img src={chartIcon} alt="" loading="lazy" aria-hidden="true" />
+				<h2>See your sky.</h2>
+				<p>Natal placements, transits, solar timing, lunar phases, and elemental balance.</p>
+			</BaseCard>
+
+			<BaseCard class="feature-card">
+				<img src={tarotIcon} alt="" loading="lazy" aria-hidden="true" />
+				<h2>Read the pattern.</h2>
+				<p>Pull a spread interpreted alongside your natal chart and the current sky.</p>
+			</BaseCard>
+
+			<BaseCard class="feature-card">
+				<img src={affirmationIcon} alt="" loading="lazy" aria-hidden="true" />
+				<h2>Keep the line.</h2>
+				<p>Create personal affirmations with poetic rhythm and astrological reasoning.</p>
+			</BaseCard>
+		</section>
+
+		<footer>
+			<span>Astry</span>
+			<a href="https://astry.app">Launch the app</a>
+		</footer>
+	</main>
+</Layout>
+
+<style>
+	.splash-page {
+		position: relative;
+		display: grid;
+		gap: clamp(1.5rem, 5vw, 3.5rem);
+		width: min(100%, 68rem);
+		min-height: 100vh;
+		margin: 0 auto;
+		padding: clamp(1.25rem, 5vw, 3.5rem);
+		overflow: hidden;
+	}
+
+	.splash-glow {
+		position: fixed;
+		inset: 0;
+		z-index: -1;
+		background:
+			radial-gradient(circle at 82% 14%, color-mix(in srgb, var(--color-pink) 8%, transparent), transparent 29rem),
+			radial-gradient(circle at 12% 76%, color-mix(in srgb, var(--color-lavender) 6%, transparent), transparent 34rem),
+			var(--color-cream);
+	}
+
+	.splash-hero {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) clamp(7rem, 20vw, 13rem);
+		align-items: center;
+		gap: clamp(1rem, 4vw, 3rem);
+		padding-top: clamp(1rem, 8vh, 5rem);
+	}
+
+	.splash-copy { display: grid; gap: 0.7rem; max-width: 39rem; }
+	.eyebrow, .launch-kicker {
+		margin: 0;
+		color: var(--color-pink);
+		font-size: 0.76rem;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: none;
+	}
+	.splash-copy h1 {
+		margin: 0;
+		color: var(--brand);
+		font-size: clamp(4.5rem, 15vw, 8.5rem);
+		line-height: 1.05;
+	}
+	.lede {
+		margin: 0;
+		color: var(--ink-soft);
+		font-size: clamp(1.1rem, 3vw, 1.55rem);
+		line-height: 1.4;
+	}
+	.splash-sun {
+		width: 100%;
+		height: auto;
+		filter: drop-shadow(0 16px 24px color-mix(in srgb, var(--color-pink-deep) 16%, transparent));
+	}
+
+	.launch-card {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		align-items: center;
+		gap: clamp(1.25rem, 4vw, 3rem);
+		padding: clamp(1.4rem, 4vw, 2.25rem);
+	}
+	.launch-card > div { display: grid; gap: 0.55rem; }
+	.launch-card h2 { margin: 0; font-size: clamp(2rem, 6vw, 3.4rem); line-height: 1.12; }
+	.launch-card p:last-child { margin: 0; color: var(--ink-soft); line-height: 1.6; }
+	.launch-button { min-width: 10rem; }
+
+	.feature-grid { display: grid; gap: 1rem; }
+	.feature-card { display: grid; align-content: start; gap: 0.65rem; padding: clamp(1.1rem, 3vw, 1.5rem); }
+	.feature-card img { width: 2.65rem; height: 2.65rem; object-fit: contain; }
+	.feature-card h2 { margin: 0; font-size: clamp(1.8rem, 5vw, 2.5rem); line-height: 1.15; }
+	.feature-card p { margin: 0; color: var(--ink-soft); line-height: 1.55; }
+
+	footer {
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+		padding: 1.5rem 0 1rem;
+    border-top: 1px solid var(--line);
+		color: var(--ink-soft);
+		font-size: 0.9rem;
+		font-weight: 800;
+	}
+	footer a { color: var(--color-pink); }
+
+	@media (min-width: 760px) {
+		.feature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+	}
+	@media (max-width: 620px) {
+		.splash-hero { grid-template-columns: minmax(0, 1fr) 6rem; align-items: start; }
+		.launch-card { grid-template-columns: 1fr; }
+		.launch-button { width: 100%; }
+	}
+</style>
