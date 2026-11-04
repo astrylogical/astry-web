@@ -22,4 +22,17 @@ jobs:
       - uses: nicodes/tools/setup@1b0fc8e6c9a1e4284bcc32c0011ecdc0cd3843b7
         env:
           GH_TOKEN: ${{ github.token }}
+      - name: Record tested integration identity
+        if: github.event_name == 'pull_request'
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: python3 "$TOOLS_ROOT/helpers/integration-identity.py"
+      - name: Preserve tested integration identity
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: fleet-integration-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .artifacts/fleet-integration.json
+          if-no-files-found: error
+          retention-days: 7
       - run: mise run check
