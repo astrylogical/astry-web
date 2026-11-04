@@ -1,0 +1,28 @@
+[
+  {
+    "kind": "accepted",
+    "package": "devalue",
+    "owner": "nicodes",
+    "review_date": "2026-11-15",
+    "advisories": [
+      "GHSA-j22f-vq7h-c4qm",
+      "GHSA-hx4r-w6wj-j8fg",
+      "GHSA-mcm9-63f2-9j32",
+      "GHSA-wf3x-273g-mvxv",
+      "GHSA-x5rw-q4pp-hg5g",
+      "GHSA-4q55-j62x-fr9h"
+    ],
+    "rationale": "This is a transitive build-tooling dependency of the static Astro website. The application declares no server output or adapter; only HTML, CSS and authored assets from app/dist are published. No server-side JavaScript or shared response cache is deployed. Retain the existing review deadline and advisory scope; reconsider when the compatible upstream dependency is fixed."
+  },
+  {
+    "kind": "accepted",
+    "package": "http-cache-semantics",
+    "version": "4.2.0",
+    "owner": "nicodes",
+    "review_date": "2026-12-15",
+    "advisories": [
+      "GHSA-ch52-4w7c-c8xp"
+    ],
+    "rationale": "This is a transitive build-tooling dependency of the static Astro website. The application declares no server output or adapter; only HTML, CSS and authored assets from app/dist are published. No server-side JavaScript or shared response cache is deployed. Retain the existing review deadline and advisory scope; reconsider when the compatible upstream dependency is fixed."
+  }
+]

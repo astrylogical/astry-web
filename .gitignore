@@ -1,0 +1,10 @@
+.ci-tools/
+.artifacts/
+.local/
+.vercel/
+**/node_modules/
+**/.astro/
+**/dist/
+**/__pycache__/
+.env
+.env.*

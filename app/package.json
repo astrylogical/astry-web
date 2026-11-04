@@ -1,0 +1,36 @@
+{
+  "name": "astry-info",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "typecheck": "astro check"
+  },
+  "dependencies": {
+    "astro": "7.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "typescript": "6"
+  },
+  "packageManager": "bun@1.4.1",
+  "overrides": {
+    "fast-uri": "3.1.9",
+    "defu": "6.1.7",
+    "devalue": "5.9.3",
+    "esbuild": "0.28.2",
+    "picomatch@^2": "2.3.2",
+    "picomatch@^4": "4.0.7",
+    "sharp": "0.35.5",
+    "smol-toml": "1.9.0",
+    "postcss": "8.5.28",
+    "svgo": "4.1.0",
+    "source-map-js": "1.2.2",
+    "vite": "8.2.4",
+    "undici": "8.12.2",
+    "zod": "4.6.6"
+  }
+}
