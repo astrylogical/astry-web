@@ -18,7 +18,7 @@ run = ["actionlint", "bun run --cwd app typecheck", "python3 .github/scripts/che
 run = "bun run --cwd app build"
 
 [tasks.artifact-check]
-run = ["python3 \"$TOOLS_ROOT/helpers/site-contract.py\" app/dist --budget scripts/site-budget.json", "python3 scripts/check-assets.py"]
+run = ["python3 \"$TOOLS_ROOT/helpers/site-contract.py\" app/dist --budget scripts/site-budget.toml", "python3 scripts/check-assets.py"]
 
 [tasks.test]
 run = [{ task = "build" }, { task = "artifact-check" }]
